@@ -1,0 +1,26 @@
+ <%!-- <%= assigns.number %> --%>
+<%!-- instead of using assigns, you can use @ --%>
+<p>
+Hello, this is from the liveview template
+</p>
+<p>
+<%= @number %>
+</p>
+<%!-- <strong>Hello World!</strong> --%>
+<p>
+    <.button phx-click="add">Add</.button>
+<space/>
+    <.button phx-click="subtract">Subtract</.button>
+</p>
+
+<.simple_form class="mt-40" for={@form} phx-submit="adding_more">
+    <%!-- <.input field={@form[:add_amount]} value={@adding_amt_default} /> --%>
+    <.input field={@form[:add_amount]} value={@form.params.adding_amt_default} />
+    <.button class="w-full">Add More</.button>
+</.simple_form>
+
+<%!-- <p>
+    <%= test("") %> --%>
+    <%!-- this is a shorthand to execute a local function --%>
+    <%!-- <.test/>
+</p> --%>
